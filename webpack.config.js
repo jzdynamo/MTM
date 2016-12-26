@@ -11,6 +11,9 @@ module.exports = {
 		path: './build/web',
 		filename: 'bundle.js'
 	},
+	resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
 	module: {
     loaders:[
       {
