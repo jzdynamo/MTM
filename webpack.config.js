@@ -24,7 +24,6 @@ module.exports = {
     ]
 	},
 	devServer: {
-		contentBase: "./build/web",
 		port: PORT,
 		host: HOST
 	},
