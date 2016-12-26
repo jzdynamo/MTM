@@ -1,4 +1,4 @@
-import * as types from '../constants/TodoActionTypes';
+import types from '../constants/TodoActionTypes';
 
 export default ({
   addTodo: text => ({ type: types.ADD_TODO, text }),
