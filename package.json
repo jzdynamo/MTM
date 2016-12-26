@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --progress --profile --colors --watch",
     "lint": "eslint --ext js --ext jsx src || exit 0",
-    "lint-fix": "eslint --ext js --ext jsx --fix src"
+    "lint-fix": "eslint --ext js --ext jsx --fix src || exit 0"
   },
   "repository": {
     "type": "git",
