@@ -4,7 +4,7 @@
   "description": "Multi-platform Todo-list with Minimal code",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --progress --profile --colors",
+    "start": "webpack-dev-server --progress --profile --colors --watch",
     "lint": "eslint --ext js --ext jsx src || exit 0"
   },
   "repository": {
