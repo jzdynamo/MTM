@@ -50,5 +50,5 @@ Open [localhost:8080](http://localhost:8080).
 npm run dev-desktop
 ```
 
-### License
+## License
 MTM is released under the [Apache-2.0](https://opensource.org/licenses/Apache-2.0).
