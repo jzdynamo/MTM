@@ -1,18 +1,18 @@
 {
-  "name": "mtm",
-  "version": "0.1.0",
+  "name": "MTM",
+  "version": "0.0.1",
   "description": "Multi-platform Todo-list with Minimal code",
   "scripts": {
     "start": "npm run dev-web",
-
     "build-web": "webpack",
     "dev-web": "webpack-dev-server --progress --profile --colors --watch",
-
     "build-desktop": "webpack --config src/client/desktop/webpack.config.js",
     "build-desktop-watch": "webpack --config src/client/desktop/webpack.config.js --watch",
     "dev-desktop": "npm run build-desktop && (npm run build-desktop-watch & electron build/desktop/main.js)",
-
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-rn-server": "node node_modules/react-native/local-cli/cli.js start",
+    "dev-ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "dev-android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "test": "jest",
     "lint": "eslint --ext js --ext jsx src || exit 0",
     "lint-fix": "eslint --ext js --ext jsx --fix src || exit 0"
   },
@@ -41,16 +41,19 @@
     "keymirror": "^0.1.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "react-native": "^0.39.2",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
+    "babel-jest": "^18.0.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
+    "babel-preset-react-native": "^1.9.1",
     "babel-preset-stage-0": "^6.16.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
@@ -60,8 +63,13 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.8.0",
     "html-webpack-plugin": "^2.24.1",
+    "jest": "^18.1.0",
+    "react-test-renderer": "^15.4.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
-  }
+  },
+  "jest": {
+		"preset": "react-native"
+	}
 }
