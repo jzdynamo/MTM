@@ -3,26 +3,18 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
   StyleSheet,
-  Text,
   View,
-  TextInput,
 } from 'react-native';
 import TodoActions from '../../../base/actions/TodoActions';
+import Header from '../components/Header';
+import TodoList from '../components/TodoList';
 
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    paddingTop: 50,
     justifyContent: 'flex-start',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  input: {
-    height: 30,
-    width: 300,
-    borderColor: 'gray',
-    borderWidth: 1,
-    margin: 20,
+    alignItems: 'stretch',
+    backgroundColor: '#f2f2f2',
   },
 });
 
@@ -42,34 +34,10 @@ class App extends Component {
       actions,
     } = this.props;
 
-    const {
-      newTodoText,
-    } = this.state;
-
     return (
       <View style={styles.root}>
-        <View>
-          <TextInput
-            style={styles.input}
-            value={newTodoText}
-            onChangeText={text => this.setState({ newTodoText: text })}
-            onSubmitEditing={(_) => {
-              actions.addTodo(newTodoText);
-              this.setState({ newTodoText: '' });
-            }}
-          />
-        </View>
-        <View>
-          {
-            todos.map((todo, index) => {
-              let text = todo.text;
-              text += todo.completed ? '[Completed]' : '[Not Completed]';
-              return (
-                <Text key={index}>{text}</Text>
-              );
-            })
-          }
-        </View>
+        <Header addTodo={actions.addTodo} />
+        <TodoList todos={todos} actions={actions} />
       </View>
     );
   }
