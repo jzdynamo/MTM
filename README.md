@@ -8,16 +8,16 @@ A simple JavaScript-based todo-list app supports multiple platforms including:
 - MacOS
 - Windows
 
-with JavaScript technologies like: 
+with JavaScript technology like:
 - React
 - React Native
 - NodeJS + Express + MongoDB
 - Electron
 
-This project is built as an example of how code is shared among different platforms using technologies in JavaScript ecosystem. It can be used as a skeleton for building more complex multi-platform applications.
+This project is built as an example of how code is shared among different platforms using technology in JavaScript ecosystem. It can be used as a skeleton for building more complex multi-platform applications.
 
 ## Progress
-The skeletons of the following items are being constructed:
+The following items are being constructed:
 - [x] Shared logic (Redux)
 - [x] Web client (React + Webpack)
 - [x] Desktop Client (Electron)
@@ -40,14 +40,26 @@ npm install
 
 ## Run
 ### Web
-```
-npm run dev-web 
+```bash
+npm run dev-web
 ```
 Open [localhost:8080](http://localhost:8080).
 
 ### Desktop
-```
+```bash
 npm run dev-desktop
+```
+
+### iOS
+```bash
+npm run start-rn-server # Only run this once if you develop both iOS and Android
+npm run dev-ios
+```
+
+### Android
+```bash
+npm run start-rn-server # Only run this once if you develop both iOS and Android
+npm run dev-android
 ```
 
 ## License
